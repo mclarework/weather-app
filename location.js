@@ -6,11 +6,6 @@ const getLocation = async location => {
   const URL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${location}.json?access_token=${mapKey}`;
   try {
     const response = await axios.get(URL);
-    // console.log(
-    //   `Location: ${response.data.features[0].text}, ${response.data.features[0].context[0].text}, ${response.data.features[0].context[1].text}`
-    // );
-    // console.log(`Latitude = ${}`);
-    // console.log(`Longitude = ${response.data.features[0].center[0]}`);
     return {
       lat: response.data.features[0].center[1],
       lng: response.data.features[0].center[0],
